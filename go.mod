@@ -1,4 +1,4 @@
-module github.com/droxer/c10k-go
+module github.com/droxer/c100k-go
 
 go 1.24.5
 
