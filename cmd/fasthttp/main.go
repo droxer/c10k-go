@@ -45,6 +45,10 @@ func handleConnection(ctx *fasthttp.RequestCtx) {
 			ctx.WriteString(fmt.Sprintf("Request Body Length: %d\n", len(body)))
 		}
 
+	case "/health":
+		ctx.SetStatusCode(fasthttp.StatusOK)
+		ctx.WriteString("OK")
+
 	default:
 		ctx.SetStatusCode(fasthttp.StatusNotFound)
 		ctx.WriteString("404 Not Found")
@@ -53,7 +57,7 @@ func handleConnection(ctx *fasthttp.RequestCtx) {
 }
 
 func main() {
-	log.Println("Starting fasthttp server on :8080")
+	log.Println("Starting fasthttp server on :8081")
 
 	// Create a fasthttp server instance
 	s := &fasthttp.Server{
@@ -66,7 +70,7 @@ func main() {
 		DisableKeepalive:   false,
 	}
 
-	err := s.ListenAndServe(":8080")
+	err := s.ListenAndServe(":8081")
 	if err != nil {
 		log.Fatalf("Error starting server: %v", err)
 	}
