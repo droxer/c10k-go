@@ -4,24 +4,27 @@
 
 Demonstrates scalable techniques for handling 100,000 concurrent requests in Go
 
-## Implementation
+## Install dependencies
 
+```
+make install_dependencies
+```
 
-### Standard Server
+## Run Standard Server
 
 This implementation uses the standard library's `net/http` package.
 ```
 make run_server
 ```
 
-### Fasthttp Server
+## Run Fasthttp Server
 
 This implementation uses the `fasthttp` package.
 ```
 make run_fasthttp
 ```
 
-### Gin Server
+## Run Gin Server
 
 This implementation uses the `gin` package.
 ```

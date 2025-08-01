@@ -1,4 +1,4 @@
-.PHONY: run_server run_fasthttp install
+.PHONY: run_server run_fasthttp run_gin install_dependencies
 
 help:
 	@echo "Usage: make <target>"
@@ -7,7 +7,7 @@ help:
 	@echo "  run_fasthttp - Run the fasthttp server"
 	@echo "  run_gin - Run the gin server"
 
-install:
+install_dependencies:
 	go mod tidy
 	go mod download
 	go mod verify
