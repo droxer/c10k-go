@@ -1,5 +1,6 @@
-# C10K in GO
+# C10K in Go
 
 ## Introduction
 
-This is a example project demonstrate how to handle 10K concurrent reqquests in go.
+This example project demonstrates scalable techniques for handling 10,000 concurrent requests in Go
+
