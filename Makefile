@@ -5,7 +5,6 @@ help:
 	@echo "Targets:"
 	@echo "  run_fasthttp - Run the fasthttp server"
 	@echo "  run_gin - Run the gin server"
-	@echo "  load_test - Run load tests"
 
 install_dependencies:
 	go mod tidy
@@ -19,7 +18,3 @@ run_fasthttp:
 
 run_gin:
 	go run cmd/gin/main.go
-
-load_test:
-	@echo "Running load tests..."
-	@./load_test.sh --help
