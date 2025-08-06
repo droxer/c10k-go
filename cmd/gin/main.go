@@ -94,8 +94,8 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"message": "This route passed through custom middleware!"})
 	})
 
-	log.Println("Gin server starting on :8080")
-	err := router.Run(":8080")
+	log.Println("Gin server starting on :8082")
+	err := router.Run(":8082")
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
