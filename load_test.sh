@@ -20,7 +20,7 @@ while [[ $# -gt 0 ]]; do
         -d) DURATION="${2}s"; shift 2 ;;
         -c) CONNECTIONS=$2; shift 2 ;;
         -t) THREADS=$2; shift 2 ;;
-        -h) echo "Usage: $0 [standard|fasthttp|gin|all] [-d duration] [-c connections] [-t threads]"; exit 0 ;;
+        -h) echo "Usage: $0 [fasthttp|gin|all] [-d duration] [-c connections] [-t threads]"; exit 0 ;;
         *) SERVER=$1; shift ;;
     esac
 done
@@ -34,7 +34,6 @@ run_test() {
     
     # Start server
     case $name in
-        standard) go run cmd/standard/main.go & ;;
         fasthttp) go run cmd/fasthttp/main.go & ;;
         gin) go run cmd/gin/main.go & ;;
     esac
@@ -58,11 +57,9 @@ run_test() {
 
 # Execute
 case $SERVER in
-    "standard") run_test "standard" 8080 ;;
     "fasthttp") run_test "fasthttp" 8081 ;;
     "gin") run_test "gin" 8082 ;;
     "all") 
-        run_test "standard" 8080
         run_test "fasthttp" 8081  
         run_test "gin" 8082
         ;;
